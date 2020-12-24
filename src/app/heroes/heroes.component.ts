@@ -22,7 +22,12 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero | undefined;
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    //this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    
+    this.heroService.getHeroes().subscribe(response => {
+      console.log(response);
+      this.heroes = response
+    });
   }
 
 }

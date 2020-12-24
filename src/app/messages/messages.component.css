@@ -18,3 +18,7 @@ h2 {
   button:hover {
     background-color: #cfd8dc;
   }
+  div.message-box {
+    clear:both;
+
+  }
