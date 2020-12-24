@@ -18,6 +18,7 @@ export class HeroService {
 
   
   private heroesUrl = 'http://localhost:8080/resources';  // URL to web api
+  private heroUrl = 'http://localhost:8080/hero/';
 
 
   getHeroes(): Observable<Hero[]> {
@@ -29,7 +30,8 @@ export class HeroService {
   getHero(id: number): Observable<Hero | undefined> {
     // TODO: send the message _after_ fetching the hero
     this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return this.http.get<Hero[]>(this.heroesUrl).subscribe(heroes => heroes.find(hero => hero.id == id));
+    return this.http.get<Hero>(this.heroUrl + id);
+    //return this.http.get<Hero[]>(this.heroesUrl).subscribe(heroes => heroes.find(hero => hero.id == id));
     //return of(HEROES.find(hero => hero.id === id));
   }
 }
