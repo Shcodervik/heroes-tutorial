@@ -12,5 +12,5 @@
             <input [(ngModel)]="hero.title" placeholder="title"/>
         </label>
     </div>
-    <button (click)="goBack()">go back</button>
+    <button (click)="updateHero(hero.name, hero.title)">update</button> <button (click)="goBack()">go back</button>
   </div>
