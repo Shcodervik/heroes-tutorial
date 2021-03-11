@@ -19,6 +19,7 @@ export class HeroService {
   
   private heroesUrl = 'http://localhost:8080/resources';  // URL to web api
   private heroUrl = 'http://localhost:8080/hero/';
+  private updateHeroUrl = 'http://localhost:8080/update/hero/';
 
 
   getHeroes(): Observable<Hero[]> {
@@ -33,5 +34,9 @@ export class HeroService {
     return this.http.get<Hero>(this.heroUrl + id);
     //return this.http.get<Hero[]>(this.heroesUrl).subscribe(heroes => heroes.find(hero => hero.id == id));
     //return of(HEROES.find(hero => hero.id === id));
+  }
+  updateHero(id: number, name: string, title: string){
+    this.messageService.add(`HeroService: updated hero id=${id}`);
+    return this.http.get<Hero>(this.updateHeroUrl + id + "/" + name + "/" + title);
   }
 }
