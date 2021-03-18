@@ -17,9 +17,10 @@ export class HeroService {
   }
 
   
-  private heroesUrl = 'http://localhost:8080/resources';  // URL to web api
-  private heroUrl = 'http://localhost:8080/hero/';
-  private updateHeroUrl = 'http://localhost:8080/update/hero/';
+  private heroesUrl = 'http://localhost:8081/resources';  // URL to web api
+  private heroUrl = 'http://localhost:8081/hero/';
+  private updateHeroUrl = 'http://localhost:8081/update/hero/';
+  private addHeroUrl = 'http://localhost:8081/add/hero/';
 
 
   getHeroes(): Observable<Hero[]> {
@@ -28,15 +29,20 @@ export class HeroService {
     return this.http.get<Hero[]>(this.heroesUrl);
    
   }
-  getHero(id: number): Observable<Hero | undefined> {
+  getHero(id: string): Observable<Hero | undefined> {
     // TODO: send the message _after_ fetching the hero
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return this.http.get<Hero>(this.heroUrl + id);
     //return this.http.get<Hero[]>(this.heroesUrl).subscribe(heroes => heroes.find(hero => hero.id == id));
     //return of(HEROES.find(hero => hero.id === id));
   }
-  updateHero(id: number, name: string, title: string){
-    this.messageService.add(`HeroService: updated hero id=${id}`);
-    return this.http.get<Hero>(this.updateHeroUrl + id + "/" + name + "/" + title);
+  updateHero(hero: Hero){
+    this.messageService.add(`HeroService: updated hero id=${hero.id}`);
+    return this.http.get<Hero>(this.updateHeroUrl + hero.id + "/" + hero.name + "/" + hero.title);
+  }
+
+  addHero(name: string, title: string){
+    this.messageService.add(`HeroService: added new hero, name=${name}`);
+    return this.http.get<Hero>(this.addHeroUrl + name + "/" + title);
   }
 }

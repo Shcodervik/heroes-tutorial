@@ -63,3 +63,9 @@
     width: 100px;
     display: inline-block;
   }
+
+  ul.row{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-inline-end: 40px;
+  }

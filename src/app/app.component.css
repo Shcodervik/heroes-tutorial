@@ -39,3 +39,8 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+
+img {
+  width: 100%;
+  margin-bottom:20px;
+}

@@ -1,9 +1,13 @@
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> <span class="name">{{hero.name}}</span> <span class="title">{{hero.title}}</span>
-    </a>
-    
+<ul class="row">
+  <li *ngFor="let hero of heroes" class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <!--<img src="{{hero.image}}" alt="dummy">-->
+      <div class="caption">
+        <h3>{{hero.name}}</h3>
+        <p>{{hero.title}}</p>
+        <p><a  routerLink="/detail/{{hero.id}}" class="btn btn-primary" role="button">Update</a> <a href="#" class="btn btn-default" role="button">Delete</a></p>
+      </div>
+    </div>  
   </li>
 </ul>
 
