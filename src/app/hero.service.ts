@@ -19,11 +19,9 @@ export class HeroService {
     this.messageService.add(`HeroService: ${message}`);
   }
 
+  // URLs to web api
   private url = 'http://localhost:8081/hero';
-  private heroesUrl = 'http://localhost:8081/resources';  // URL to web api
   private heroUrl = 'http://localhost:8081/hero/';
-  private updateHeroUrl = 'http://localhost:8081/update/hero/';
-  private addHeroUrl = 'http://localhost:8081/add/hero/';
 
 
   getHeroes(): Observable<Hero[]> {
