@@ -1,0 +1,16 @@
+
+
+    <h2>Add new hero:</h2>
+    <div>
+      <label>name:
+        <input type="text" class="form-control" [(ngModel)]="name" placeholder="name"/>
+      </label>
+    </div>
+    <div>
+        <label>title:
+            <input type="text" class="form-control" [(ngModel)]="title" placeholder="title"/>
+        </label>
+    </div>
+    <button type="button" class="btn btn-success" (click)="addHero(name,title)">add</button> <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+
+
