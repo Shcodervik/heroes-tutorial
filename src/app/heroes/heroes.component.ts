@@ -11,9 +11,10 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] | undefined;
   
-  constructor(private heroService: HeroService, private messageService: MessageService) {
-
-   }
+  constructor(
+    private heroService: HeroService, 
+    private messageService: MessageService
+  ) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -27,6 +28,12 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(response => {
       console.log(response);
       this.heroes = response
+    });
+  }
+
+  deleteHero(hero: Hero): void {
+    this.heroService.deleteHero(hero).subscribe(response => {
+      console.log(response);
     });
   }
 

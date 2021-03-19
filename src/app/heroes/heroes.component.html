@@ -5,7 +5,8 @@
       <div class="caption">
         <h3>{{hero.name}}</h3>
         <p>{{hero.title}}</p>
-        <p><a  routerLink="/detail/{{hero.id}}" class="btn btn-primary" role="button">Update</a> <a href="#" class="btn btn-default" role="button">Delete</a></p>
+        <p><a routerLink="/detail/{{hero.id}}" class="btn btn-primary" role="button">Update</a> 
+          <a role="button" class="btn btn-default" (click)="deleteHero(hero)">Delete</a></p>
       </div>
     </div>  
   </li>
