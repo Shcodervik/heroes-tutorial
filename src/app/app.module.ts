@@ -19,7 +19,7 @@ import { AddHeroComponent } from './add-hero/add-hero.component';
     MessagesComponent,
     DashboardComponent,
     AddHeroComponent,
-    
+
   ],
   imports: [
     BrowserModule,

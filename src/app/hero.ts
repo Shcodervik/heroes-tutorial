@@ -1,8 +1,8 @@
-import { Binary } from "@angular/compiler";
+import { Binary } from '@angular/compiler';
 
 export interface Hero {
-    id: string;
+    id?: string;
     name: string;
     title: string;
-    image: Binary;
+    image?: Binary;
   }
