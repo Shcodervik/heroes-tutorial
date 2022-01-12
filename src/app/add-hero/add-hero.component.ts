@@ -12,19 +12,19 @@ import { HeroService } from '../hero.service';
 export class AddHeroComponent implements OnInit {
 
   hero: Hero | undefined;
-  name: string = '';
-  title: string = '';
+  name = '';
+  title = '';
 
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location
-    ) { 
-    
+    ) {
+
   }
 
   ngOnInit(): void {
- 
+
   }
 
   addHero(name: string, title: string): void {
@@ -33,5 +33,7 @@ export class AddHeroComponent implements OnInit {
 
   }
 
-
+  goBack(): void {
+    this.location.back();
+  }
 }
