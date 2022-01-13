@@ -1,16 +1,25 @@
 <div *ngIf="hero">
 
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-      <label>name:
-        <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name"/>
-      </label>
-    </div>
-    <div>
-        <label>title:
-            <input type="text" class="form-control" [(ngModel)]="hero.title" placeholder="title"/>
-        </label>
-    </div>
-    <button type="button" class="btn btn-success" (click)="updateHero(hero)">Update</button> <button type="button" class="btn btn-primary" (click)="goBack()">Go back</button>
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
   </div>
+  <div>
+    <label>title:
+      <input type="text" class="form-control" [(ngModel)]="hero.title" placeholder="title"/>
+    </label>
+  </div>
+  <div>
+    <label>image
+      <span>Select Image</span>
+      <input #imageInput
+             type="file"
+             accept="image/*"
+             (change)="processFile(imageInput)">
+    </label>
+  </div>
+  <button type="button" class="btn btn-success" (click)="updateHero(hero)">Update</button> <button type="button" class="btn btn-primary" (click)="goBack()">Go back</button>
+</div>

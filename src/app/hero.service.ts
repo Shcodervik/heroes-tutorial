@@ -4,6 +4,7 @@ import { Hero } from './hero';
 import { Observable } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -16,9 +17,8 @@ export class HeroService {
     private messageService: MessageService
   ) { }
 
-  // URLs to web api
-  private url = 'http://localhost:8081/hero';
-  private heroUrl = 'http://localhost:8081/hero/';
+  // URL to web api
+  private url = environment.apiUrl; // 'http://localhost:8081/hero';
 
   private log(message: string): void {
     this.messageService.add(`HeroService: ${message}`);
@@ -29,13 +29,12 @@ export class HeroService {
   }
 
   getHero(id: string | null): Observable<Hero> {
-    // TODO: send the message _after_ fetching the hero
-    return this.http.get<Hero>(this.heroUrl + id);
+    return this.http.get<Hero>(`${this.url}/${id}`);
   }
 
   updateHero(hero: Hero): Observable<Hero> {
     this.log(`HeroService: updated hero id=${hero.id}`);
-    return this.http.put<Hero>(this.url + '/' + hero.id, hero);
+    return this.http.put<Hero>(`${this.url}/${hero.id}`, hero);
   }
 
   addHero(name: string, title: string): Observable<Hero> {
@@ -49,6 +48,6 @@ export class HeroService {
 
   deleteHero(hero: Hero): Observable<Hero> {
     this.log(`HeroService: deleted hero, name=${hero.name}`);
-    return this.http.delete<Hero>(this.url + '/' + hero.id);
+    return this.http.delete<Hero>(`${this.url}/${hero.id}`);
   }
 }
