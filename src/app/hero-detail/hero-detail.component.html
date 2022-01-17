@@ -13,7 +13,12 @@
     </label>
   </div>
   <div>
-    <label>image
+    <label>Current image
+      <img src="{{hero.image || 'assets/images/default.jpg'}}" [(ngModel)]="hero.image" alt="current image of {{hero.name}}"/>
+    </label>
+  </div>
+  <div>
+    <label>Change image
       <span>Select Image</span>
       <input #imageInput
              type="file"

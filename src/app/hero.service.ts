@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import {map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -49,5 +50,11 @@ export class HeroService {
   deleteHero(hero: Hero): Observable<Hero> {
     this.log(`HeroService: deleted hero, name=${hero.name}`);
     return this.http.delete<Hero>(`${this.url}/${hero.id}`);
+  }
+
+  searchHeroes(term: string): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.url).pipe(
+      map((heroes) => heroes.filter(hero => hero.name.includes(term)))
+    );
   }
 }
