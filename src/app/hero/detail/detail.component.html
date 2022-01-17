@@ -4,17 +4,18 @@
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
-      <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name"/>
+      <!--ngDefaultControl fixes problem: ERROR Error: No value accessor for form control with unspecified name attribute-->
+      <input type="text" class="form-control" [(ngModel)]="hero.name" ngDefaultControl placeholder="name"/>
     </label>
   </div>
   <div>
     <label>title:
-      <input type="text" class="form-control" [(ngModel)]="hero.title" placeholder="title"/>
+      <input type="text" class="form-control" [(ngModel)]="hero.title" ngDefaultControl placeholder="title"/>
     </label>
   </div>
   <div>
     <label>Current image
-      <img src="{{hero.image || 'assets/images/default.jpg'}}" [(ngModel)]="hero.image" alt="current image of {{hero.name}}"/>
+      <img src="{{hero.image || 'assets/images/default.jpg'}}" [(ngModel)]="hero.image" ngDefaultControl alt="current image of {{hero.name}}"/>
     </label>
   </div>
   <div>

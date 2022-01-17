@@ -7,12 +7,12 @@ import { MessageService } from 'src/app/message/message.service';
 
 @Component({
   selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
 
 
-export class HeroDetailComponent implements OnInit {
+export class DetailComponent implements OnInit {
 
   hero: Hero | undefined;
   base64data: string | ArrayBuffer | null = null;
