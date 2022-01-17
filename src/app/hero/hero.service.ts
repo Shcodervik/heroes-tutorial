@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 // import { HEROES } from './mock-heroes';
 import { Observable } from 'rxjs';
-import { MessageService } from './message.service';
+import { MessageService } from '../message/message.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import {map} from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -47,9 +47,10 @@ export class HeroService {
     return this.http.post<Hero>(this.url, hero);
   }
 
-  deleteHero(hero: Hero): Observable<Hero> {
+  deleteHero(hero: Hero): Observable<unknown> {
     this.log(`HeroService: deleted hero, name=${hero.name}`);
-    return this.http.delete<Hero>(`${this.url}/${hero.id}`);
+    console.log(hero);
+    return this.http.delete(`${this.url}/${hero.id}`);
   }
 
   searchHeroes(term: string): Observable<Hero[]> {

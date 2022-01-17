@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
+import { HeroesComponent } from './hero/heroes/heroes.component';
+import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
+import { MessagesComponent } from './message/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddHeroComponent } from './add-hero/add-hero.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { DashboardComponent } from './hero/dashboard/dashboard.component';
+import { AddComponent } from './hero/add/add.component';
+import { HeroSearchComponent } from './hero/hero-search/hero-search.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { HeaderComponent } from './header/header.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    AddHeroComponent,
+    AddComponent,
     HeroSearchComponent,
     HeaderComponent,
 

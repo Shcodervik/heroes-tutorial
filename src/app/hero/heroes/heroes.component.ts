@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from 'src/app/hero';
-import { HeroService } from 'src/app/hero.service';
+import { Hero } from 'src/app/hero/hero';
+import { HeroService } from 'src/app/hero/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
   }
 
   deleteHero(hero: Hero): void {
-    this.heroService.deleteHero(hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 
 }
