@@ -5,23 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './hero/heroes/heroes.component';
-import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
+import { DetailComponent } from './hero/detail/detail.component';
 import { MessagesComponent } from './message/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './hero/dashboard/dashboard.component';
 import { AddComponent } from './hero/add/add.component';
-import { HeroSearchComponent } from './hero/hero-search/hero-search.component';
+import { SearchComponent } from './hero/search/search.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent,
+    DetailComponent,
     MessagesComponent,
     DashboardComponent,
     AddComponent,
-    HeroSearchComponent,
+    SearchComponent,
     HeaderComponent,
 
   ],
