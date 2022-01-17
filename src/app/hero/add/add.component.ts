@@ -6,10 +6,10 @@ import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-add-hero',
-  templateUrl: './add-hero.component.html',
-  styleUrls: ['./add-hero.component.css']
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.css']
 })
-export class AddHeroComponent implements OnInit {
+export class AddComponent implements OnInit {
 
   hero: Hero | undefined;
   name = '';
