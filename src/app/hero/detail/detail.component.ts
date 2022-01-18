@@ -47,7 +47,7 @@ export class DetailComponent implements OnInit {
   }
 
   updateHero(hero: Hero): void {
-    hero.image = this.base64data?.toString() || '';
+    hero.image = this.base64data?.toString() || hero.image;
     console.log(this.hero);
     this.heroService.updateHero(hero)
       .subscribe(hero => {
