@@ -6,18 +6,22 @@ nav a {
   background-color: #eee;
   border-radius: 4px;
 }
-nav a:visited, a:link {
+
+a:link,
+nav a:visited {
   color: #334953;
 }
+
 nav a:hover {
   color: #039be5;
   background-color: #cfd8dc;
 }
+
 nav a.active {
   color: #039be5;
 }
 
 img {
   width: 100%;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }

@@ -1,6 +1,6 @@
 /* HeroSearch private styles */
 .search-result input {
-  padding: .3rem;
+  padding: 0.3rem;
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
@@ -8,12 +8,13 @@
 }
 
 .search-result input:focus {
-  outline: #336699 auto 1px;
+  outline: #369 auto 1px;
 }
 
 .search-result li {
   list-style-type: none;
 }
+
 .search-result li a {
   border-radius: 0;
   border-bottom: 1px solid black;
@@ -24,7 +25,7 @@
 }
 
 .search-result li a:hover {
-  background-color: #435A60;
+  background-color: #435a60;
   color: white;
 }
 
