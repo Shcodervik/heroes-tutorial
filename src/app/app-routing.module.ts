@@ -17,7 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule, //it was fix for undisplayed heroes
+    RouterModule, // it was fix for undisplayed heroes
     RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

@@ -50,9 +50,9 @@ export class DetailComponent implements OnInit {
     hero.image = this.base64data?.toString() || hero.image;
     console.log(this.hero);
     this.heroService.updateHero(hero)
-      .subscribe(hero => {
-        this.hero = hero;
-        console.log(hero);
+      .subscribe(currentHero => {
+        this.hero = currentHero;
+        console.log(currentHero);
       });
   }
 
