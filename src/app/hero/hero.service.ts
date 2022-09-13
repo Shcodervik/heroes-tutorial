@@ -49,7 +49,6 @@ export class HeroService {
 
   deleteHero(hero: Hero): Observable<unknown> {
     this.log(`HeroService: deleted hero, name=${hero.name}`);
-    console.log(hero);
     return this.http.delete(`${this.url}/${hero.id}`);
   }
 

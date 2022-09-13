@@ -13,9 +13,8 @@ import { MessageService } from 'src/app/message/message.service';
 
 
 export class DetailComponent implements OnInit {
-
-  hero: Hero | undefined;
-  base64data: string | ArrayBuffer | null = null;
+  hero?: Hero;
+  base64data?: string | ArrayBuffer | null;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +32,7 @@ export class DetailComponent implements OnInit {
   }
 
   getHero(): void {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe(() => {
       this.heroService.getHero(this.route.snapshot.paramMap.get('id'))
         .subscribe(hero => {
           this.hero = hero;
@@ -48,11 +47,9 @@ export class DetailComponent implements OnInit {
 
   updateHero(hero: Hero): void {
     hero.image = this.base64data?.toString() || hero.image;
-    console.log(this.hero);
     this.heroService.updateHero(hero)
       .subscribe(currentHero => {
         this.hero = currentHero;
-        console.log(currentHero);
       });
   }
 
@@ -63,7 +60,6 @@ export class DetailComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onloadend = () => {
         this.base64data = reader.result;
-        console.log(this.base64data);
       };
     }
   }
