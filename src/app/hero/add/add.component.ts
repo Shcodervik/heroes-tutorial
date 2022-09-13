@@ -10,21 +10,16 @@ import { HeroService } from 'src/app/hero/hero.service';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-
-  hero: Hero | undefined;
-  name = '';
-  title = '';
+  hero: Hero = { name: '', title: '' };
 
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location
-    ) {
-
-  }
+    ) { }
 
   ngOnInit(): void {
-
+    // Nothing to do
   }
 
   addHero(name: string, title: string): void {
